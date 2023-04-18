@@ -5,12 +5,14 @@ DIR="./log"
 if [ ! -d $DIR ]
 then
     mkdir $DIR
-else
-    echo "Directory $DIR already exists."
 fi
 
 # ログファイルを作成
 FILE="$DIR/log.txt"
 
-TODAY=`date '+%Y-%m-%d %H:%M:%S'`
-echo "$TODAY Log Write!!!" >> $FILE
+for ((i=1; i<=10; i++))
+do
+    TODAY=`date '+%Y-%m-%d %H:%M:%S'`
+    echo "$TODAY Log Write $i!!!" >> $FILE
+    sleep 5
+done
